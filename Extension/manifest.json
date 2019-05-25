@@ -1,0 +1,19 @@
+{
+    "name": "Google Authenticator",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "Google Authenticator Chrome extension.",
+  "background": {
+    "scripts": ["inject.js"]
+  },
+  "permissions": [
+    "<all_urls>",
+    "tabs",
+    "storage",
+    "unlimitedStorage",
+    "webNavigation",
+    "background",
+    "http://*/*",
+    "https://*/*"
+  ]
+}
