@@ -2,7 +2,7 @@
 
 
 ### Client:
-Go to: chrome://extensions/ and enable devolper mode, then load the extension.
+Go to: chrome://extensions/ and enable developer mode, then load the extension.
 
 ### Server:
 ```sh
