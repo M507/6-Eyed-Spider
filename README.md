@@ -1,8 +1,9 @@
 # Google-Chrome-keylogger-extension
 
-
 ### Client:
-Go to: chrome://extensions/ and enable developer mode, then load the extension.
+* Go to: chrome://extensions/
+* Enable devolper mode.
+* Load [/Extension][PlDb]
 
 ### Server:
 ```sh
@@ -12,5 +13,12 @@ $ pip install -r requirements.txt
 $ python Listener.py 
 ```
 
-Description:
-TODO
+All the clients data will be in Data/*
+
+
+![Ex1](https://raw.githubusercontent.com/M507/Google-Chrome-keylogger-extension/master/Examples/img1.png)
+
+
+### Todos
+
+ - Firefox version
