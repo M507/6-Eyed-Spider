@@ -13,11 +13,6 @@ $ pip install -r requirements.txt
 $ python Listener.py 
 ```
 
-All the clients' data will be in Data/*
-
-
-![Ex1](https://raw.githubusercontent.com/M507/Google-Chrome-keylogger-extension/master/Examples/img1.png)
-
 
 ### Todos
 
