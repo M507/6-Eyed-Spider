@@ -22,3 +22,4 @@ All the clients' data will be in Data/*
 ### Todos
 
  - Firefox version
+ - Collecting visited websites
