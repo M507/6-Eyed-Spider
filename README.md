@@ -3,7 +3,7 @@
 ### Client:
 * Go to: chrome://extensions/
 * Enable devolper mode.
-* Load [/Extension][PlDb]
+* Load /Extension
 
 ### Server:
 ```sh
