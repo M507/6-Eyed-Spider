@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  db:
+    image: mongo
+    environment:
+      - MONGO_INITDB_DATABASE=strapi
+    ports:
+      - 27017:27017
+    volumes:
+      - ./db:/data/db
+      - ./database/db.dump:/data/db.dump
+    restart: always

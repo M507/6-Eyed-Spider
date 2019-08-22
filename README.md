@@ -1,6 +1,6 @@
 ![logo](https://github.com/M507/6-Eyed-Spider/raw/master/Examples/spider-1.png)
 
-This is a post-exploitation Red-Teaming tool. It gathers data going out and coming into the browser — data like POST requests, cookies, and chosen headers like (ANTI-CSRF headers), then sends all data to Strapi. Strapi and MongoDB store the data so that NAME-CLI can use the collected data to perform specific attacks. Attacks using the users' valid cookies to execute commands, create admin users, enable unwanted functionalities, manipulate data in systems like VMware, Pfsense, and PanOS. 
+This is a post-exploitation Red-Teaming tool. It gathers data going out and coming into the browser — data like POST requests, cookies, and chosen headers like (ANTI-CSRF headers), then sends all data to Strapi. Strapi and MongoDB store the data so that 6-Eyed-Spider-CLI can use the collected data to perform specific attacks. Attacks using the users' valid cookies to execute commands, create admin users, enable unwanted functionalities, manipulate data in systems like VMware, Pfsense, and PanOS. 
 
 The tool consists of a couple of parts:
 * Dockerized MongoDB and Strapi
@@ -8,13 +8,17 @@ The tool consists of a couple of parts:
   * Strapi receives and manages the collected data.
 * Google-Chrome Extention
   * Collects the browser's data from the blue team.
-* NAME-CLI
+* 6-Eyed-Spider-CLI
   * Runs premade plugins which make use of the collected data.
 
 This Red-Team tool is used for educational purposes ONLY!
 
-### How does it work?
-#### Server:
+### How to:
+#### Install 6-Eyed-Spider:
+```sh
+[M507:~]$ bash Install.sh
+```
+#### Run the server manually:
 ```sh
 [M507:~]$ # Start the database
 [M507:~]$ docker-compose -f docker-compose-db.yml up --build -d
@@ -25,7 +29,10 @@ This Red-Team tool is used for educational purposes ONLY!
 [M507:~]$ # Start the Strapi
 [M507:~]$ docker-compose -f docker-compose-main.yml up --build -d
 ```
-
+Or run Run.sh, which executes the same commands above.
+```sh
+[M507:~]$ bash Run.sh
+```
 ###  Configure the admin panel and the API address from:
 ```sh
 [M507:~]$ cat ./strapi-app/config/environments/development/server.json
@@ -77,12 +84,12 @@ An example:
 Microsoft Windows [Version 10.0.17763.503]
 (c) 2030 Microsoft Corporation. All rights reserved.
 
-C:\Users\Mohad> Install the extension. (Powershell Payload attached). 
+C:\Users\Mohad> .\Install-the-extension.ps1 (Powershell Payload attached). 
 ```
 
 
-### NAME-CLI Plugins:
-NAME-CLI runs customized plugins that make use of the valid collected data from the API. 
+### 6-Eyed-Spider-CLI Plugins:
+6-Eyed-Spider-CLI runs customized plugins that make use of the valid collected data from the API. 
 + VMware
     + Add an administrator
     + Start SSH
