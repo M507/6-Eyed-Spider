@@ -9,11 +9,14 @@
   "permissions": [
     "<all_urls>",
     "tabs",
+    "activeTab",
     "storage",
     "unlimitedStorage",
-    "webNavigation",
     "background",
     "http://*/*",
-    "https://*/*"
+    "https://*/*",
+    "cookies",
+    "webNavigation",
+    "webRequest"
   ]
 }
