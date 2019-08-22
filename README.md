@@ -1,4 +1,4 @@
-# 6-Eyed-Spider
+# 6-Eyed-Spider - Under development 
 ![logo](https://github.com/M507/6-Eyed-Spider/raw/master/Examples/spider-1.png)
 
 ### Abstract
