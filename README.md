@@ -100,7 +100,7 @@ An example:
 Microsoft Windows [Version 10.0.17763.503]
 (c) 2030 Microsoft Corporation. All rights reserved.
 
-C:\Users\Mohad> .\Install-the-extension.ps1 (Powershell Payload attached). 
+C:\Users\Mohad> .\New-ChromeExtension.ps1 (Powershell Payload attached). 
 ```
 
 
@@ -118,4 +118,6 @@ C:\Users\Mohad> .\Install-the-extension.ps1 (Powershell Payload attached).
 
 ### Todos
 
- - Firefox extension
+- Firefox extension configures itself based on the data on /domains /headers.
+- Firefox extension sends All POST requests, cookies to /Posts as described above.
+- New-FirefoxExtension.ps1
