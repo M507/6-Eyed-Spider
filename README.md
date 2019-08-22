@@ -1,5 +1,7 @@
+# 6-Eyed-Spider
 ![logo](https://github.com/M507/6-Eyed-Spider/raw/master/Examples/spider-1.png)
 
+### Abstract
 This is a post-exploitation Red-Teaming tool. It gathers data going out and coming into the browser — data like POST requests, cookies, and chosen headers like (ANTI-CSRF headers), then sends all data to Strapi. Strapi and MongoDB store the data so that 6-Eyed-Spider-CLI can use the collected data to perform specific attacks. Attacks using the users' valid cookies to execute commands, create admin users, enable unwanted functionalities, manipulate data in systems like VMware, Pfsense, and PanOS. 
 
 The tool consists of a couple of parts:
@@ -9,9 +11,23 @@ The tool consists of a couple of parts:
 * Google-Chrome Extention
   * Collects the browser's data from the blue team.
 * 6-Eyed-Spider-CLI
-  * Runs premade plugins which make use of the collected data.
+  * Runs custom made plugins which make use of the collected data.
 
+### Disclaimer
 This Red-Team tool is used for educational purposes ONLY!
+
+## Table of contents:
+ * [Abstract](#abstract)
+ * [Disclaimer](#disclaimer)
+ * [How to](#how-to)
+    * [Install 6-Eyed-Spider](#install-6-eyed-spider)
+    * [Run the server manually](#run-the-server-manually)
+ * [Configure the admin panel and the API address from](#configure-the-admin-panel-and-the-api-address-from)
+    * [Then with administrator privileges](#then-with-administrator-privileges)
+    * [Clients:](#clients)
+ * [6-Eyed-Spider-CLI Plugins](#6-eyed-spider-cli-plugins)
+ * [Dependencies](#dependencies)
+ * [Todos](#todos)
 
 ### How to:
 #### Install 6-Eyed-Spider:
