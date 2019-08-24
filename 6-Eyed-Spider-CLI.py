@@ -4,7 +4,7 @@ from Lib.Plugins.pfSense import *
 
 
 class MyPrompt(Cmd):
-    prompt = 'pb> '
+    prompt = '6-Eyed-Spider> '
     intro = "Welcome! Type ? to list commands"
 
     def do_exit(self, inp):
@@ -31,7 +31,8 @@ class MyPrompt(Cmd):
     def help_Add_ESXI_Admin(self):
         print("Add admin user.\n"
               "Usage: Add_ESXI_Admin <ESXI_IP> <USERNAME> <STRONG_PASSWORD> <Description>\n"
-              "Add_ESXI_Admin 192.168.1.10 BLACK_TEAM Liverpool!1!1! Description1\n")
+              "Add_ESXI_Admin 192.168.1.10 BLACK_TEAM Liverpool!1!1! Description1\n"
+              "Add_ESXI_Admin 192.168.1.10 ADMIN Liverpool!1998 Description2\n")
 
     def do_ESXI_Enable_SSH(self, line):
         line = line.split(' ')
@@ -45,6 +46,7 @@ class MyPrompt(Cmd):
     def help_ESXI_Enable_SSH(self):
         print("Enable SSH.\n"
               "Usage: ESXI_Enable_SSH <ESXI_IP>\n"
+              "ESXI_Enable_SSH 10.2.2.2\n"
               "ESXI_Enable_SSH 192.168.1.10\n")
 
     def do_Execute_pfSense_Command(self, line):
