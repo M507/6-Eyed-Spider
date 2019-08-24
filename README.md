@@ -54,7 +54,7 @@ Add_ESXI_Admin 192.168.1.10 ADMIN Liverpool!1998 Description2
 
 6-Eyed-Spider> help Execute_pfSense_Command
 Enable SSH.
-Usage: Execute_pfSense_Command <ESXI_IP> <Command>
+Usage: Execute_pfSense_Command <pfSense_IP> <Command>
 Execute_pfSense_Command 192.168.1.10 id
 Execute_pfSense_Command 192.168.1.10 whoami
 
@@ -160,6 +160,6 @@ C:\Users\Mohad> .\New-ChromeExtension.ps1 (Powershell Payload attached).
 
 ### Todos
 
-- Firefox extension configures itself based on the data on /domains /headers.
-- Firefox extension sends All POST requests, cookies to /Posts as described above.
+- Firefox extension configures itself based on the data in /domains and /headers.
+- Firefox extension sends All POST requests and cookies to /Posts as described above.
 - New-FirefoxExtension.ps1

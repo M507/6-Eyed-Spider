@@ -63,7 +63,7 @@ class MyPrompt(Cmd):
 
     def help_Execute_pfSense_Command(self):
         print("Enable SSH.\n"
-              "Usage: Execute_pfSense_Command <ESXI_IP> <Command>\n"
+              "Usage: Execute_pfSense_Command <pfSense_IP> <Command>\n"
               "Execute_pfSense_Command 192.168.1.10 id\n"
               "Execute_pfSense_Command 192.168.1.10 whoami\n")
 
