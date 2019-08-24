@@ -1,5 +1,6 @@
 from cmd import Cmd
 from Lib.Plugins.ESXI_UI import *
+from Lib.Plugins.pfSense import *
 
 
 class MyPrompt(Cmd):
@@ -46,19 +47,52 @@ class MyPrompt(Cmd):
               "Usage: ESXI_Enable_SSH <ESXI_IP>\n"
               "ESXI_Enable_SSH 192.168.1.10\n")
 
-    def do_print_creds(self, line):
+    def do_Execute_pfSense_Command(self, line):
+        line = line.split(' ')
+        pfSense_IP = line[0]
+        Command = ' '
+        Command = Command.join(line[1:])
+
+        # Check - REGEX - Then pass it
+
+        # IF good to go:
+        # Execute_pfSense_Command 10.1.1.254 ls
+        Execute_pfSense(pfSense_IP, 'Execute_Command', Command)
+
+    def help_Execute_pfSense_Command(self):
+        print("Enable SSH.\n"
+              "Usage: Execute_pfSense_Command <ESXI_IP> <Command>\n"
+              "Execute_pfSense_Command 192.168.1.10 id\n"
+              "Execute_pfSense_Command 192.168.1.10 whoami\n")
+
+    """
+    Check for USERNAME / PASSWORD and any wellknown token for USERNAMEs and PASSWORDs
+    """
+    def do_Print_creds(self, line):
         line = line.split(' ')
         IP = line[0]
-
         # Check if ip is real ip - Regex
 
         # Print it
-
-    def help_print_creds(self):
+    def help_Print_creds(self):
         print("List all stored credentials.\n"
               "Usage: print_creds <ip>\n"
               "print_creds 192.168.1.10\n"
               "print_creds all")
+
+    def do_Print_all_pfSenses_under_control(self, line):
+        Print_all_pfSenses_under_control()
+
+    def help_Print_all_pfSenses_under_control(self):
+        print("List all pfSenses under control.\n"
+              "Usage: Print_all_pfSenses_under_control\n")
+
+    def do_Print_all_ESXis_under_control(self, line):
+        Print_all_ESXis_under_control()
+
+    def help_Print_all_ESXis_under_control(self):
+        print("List all ESXis under control.\n"
+              "Usage: Print_all_ESXis_under_control\n")
 
     def default(self, inp):
         if inp == 'x' or inp == 'q':

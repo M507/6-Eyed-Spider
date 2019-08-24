@@ -1,6 +1,6 @@
 import requests
 import re
-ip = '127.0.0.1'
+API_IP = '127.0.0.1'
 # proxies = {"http": "http://127.0.0.1:8080", "https": "http://127.0.0.1:8080"}
 
 
@@ -11,7 +11,7 @@ Examples:
 Jdata = pull('Domains')
 """
 def pull(endpoint):
-    r = requests.get('http://'+ip+':1337/'+endpoint,  verify=False)
+    r = requests.get('http://'+API_IP+':1337/'+endpoint,  verify=False)
     data = r.json()
     return(data)
 

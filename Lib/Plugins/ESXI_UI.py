@@ -169,3 +169,17 @@ def getAuthTokens4ESXI(ip):
                 SOAPActionList.append(data['SOAPAction'])
 
     return vmware_clientList, vmware_soap_sessionList, VMware_CSRF_TokenList, SOAPActionList
+
+
+def Print_all_ESXis_under_control():
+    j = pull('Posts')
+    print(j)
+    for element in j:
+        try:
+            data = getDataFromJson(element)
+            # If this ip is in the site url
+            if 'VMware-CSRF-Token' in data:
+                site = getSiteFromJson(element)
+                print(site)
+        except:
+            pass
