@@ -1,5 +1,4 @@
 # 6-Eyed-Spider - Under development 
-![logo](https://github.com/M507/6-Eyed-Spider/raw/master/Examples/2.png)
 
 ### Abstract
 This is a post-exploitation Red-Teaming tool. It gathers data going out and coming into the browser — data like POST requests, cookies, and chosen headers like (ANTI-CSRF headers), then sends all data to Strapi. Strapi and MongoDB store the data so that 6-Eyed-Spider-CLI can use the collected data to perform specific attacks. Attacks using the users' valid cookies to execute commands, create admin users, enable unsafe functionalities, manipulate data in systems like VMware, Pfsense, and PanOS. 
