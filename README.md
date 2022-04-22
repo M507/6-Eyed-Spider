@@ -14,8 +14,11 @@ The tool consists of a couple of parts:
 * 6-Eyed-Spider-CLI
   * Runs custom made plugins which make use of the collected data.
 
+
 ### Disclaimer
 This Red-Team tool is used for educational purposes ONLY!
+
+## [ Read the full blog post here](https://shellcode.blog/6-Eyed-Spider/)
 
 ## Table of contents:
  * [Abstract](#abstract)
